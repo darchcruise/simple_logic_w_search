@@ -22,10 +22,13 @@ class TransactionsController < ApplicationController
       # else
       #   @price = "You entered an invalid order"
 
-      if search == "5"
+      guess = search.to_i
+      if guess == 5
         @outcome = "You win"
+      elsif guess > 5
+        @outcome = "Too high"
       else
-        @outcome = "You lose"
+        @outcome = "Too low"
       end
   end
 end
