@@ -1,15 +1,9 @@
 Jan04::Application.routes.draw do
   root :to => 'transactions#index'
 
-  get "transactions/index"
+  match ':controller(/:action(/:id))(.:format)'
 
-  get "transactions/new"
 
-  get "transactions/edit"
-
-  get "transactions/show"
-
-  post "transactions/find"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
