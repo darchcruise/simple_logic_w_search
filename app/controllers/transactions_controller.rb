@@ -9,18 +9,9 @@ class TransactionsController < ApplicationController
   end
 
 
-
   def coffee
-    search = params[:search_string]
-      if search == "small"
-        @price = 2.50
-      elsif search == "med"
-        @price = 3.75
-      elsif search == "large"
-        @price = 5.00
-      else
-        @price = "You entered an invalid order"
-      end
+    # call the transaction model "Transaction" and call the search method on it
+      @price = Transaction.search(params[:search_string])
   end
 
   def game
